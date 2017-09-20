@@ -1,0 +1,59 @@
+# Folder hooks
+folder-hook 'account1@mail.com' 'source ~/.mutt/account1@mail.com/accountrc'
+folder-hook 'account2@mail.com' 'source ~/.mutt/account2@mail.com/accountrc'
+
+# Default account
+source ~/.mutt/account1@mail.com/accountrc 
+
+# switching between accounts
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account1@mail.com/accountrc<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account1@mail.com/accountrc<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/account1@mail.com/accountrc<enter><change-folder>!<enter>'
+
+auto_view text/html
+
+set sort='threads'
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+
+# old unread messages
+color index green default "~O"
+##
+## # new unread messages
+#color index brightgreen default "~N"
+##
+## # messages to me
+#color index cyan default "~p"
+#color index brightcyan default "~p~O"
+#color index brightcyan default "~p~N"
+##
+## # messages from me
+#color index yellow default "~P"
+##
+## # tagged messages
+#color index red default "~T"
+##
+## # messages about to be deleted
+color index brightyellow default "~D"
+##
+## # message displaying settings
+#color hdrdefault green default
+#color header brightgreen default ^Subject:
+#color quoted cyan default
+#color signature red default
+
+# disable artifitial pauses
+set sleep_time = 0
+# color scheme
+source ~/.mutt/colors/vombatidae.mutt
+
+## split window
+set pager_index_lines=10
+
+set sidebar_visible=no
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+macro index \CB '<enter-command>toggle sidebar_visible<enter><refresh>'
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \CO sidebar-open

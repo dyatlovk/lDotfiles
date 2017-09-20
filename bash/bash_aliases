@@ -1,0 +1,6 @@
+alias Update="sudo apt-get update"
+alias Upgrade="sudo apt-get upgrade"
+alias Install="sudo apt-get install"
+alias Search="sudo apt-cache search"
+alias Autoremove="sudo apt-get autoremove"
+alias msql="mysql -u<name> -p<pass>"

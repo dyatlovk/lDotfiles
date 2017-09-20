@@ -1,0 +1,24 @@
+auto-reload "yes"
+browser "lynx %u"
+html-renderer "w3m -dump -T text/html"
+player "mpv"
+
+macro o set browser open-in-browser
+
+highlight article "(^Feed:|^Title:|^Author:|^Link:|^Date:|^Podcast Download URL:)"    color136 default
+
+bind-key j down feedlist
+bind-key k up feedlist
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key j down article
+bind-key k up article
+
+#colors
+color listnormal color244 color234
+color listfocus  color166 color235
+color info       color136 color235
+color background color244 color234
+color article    color244 color234

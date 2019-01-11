@@ -1,0 +1,4 @@
+QT_QPA_PLATFORMTHEME=gtk2
+QT_STYLE_OVERRIDE=gtk2
+XDG_CURRENT_DESKTOP=gnome
+no_proxy="127.0.0.1, localhost, *.vdev"
